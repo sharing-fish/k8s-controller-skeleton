@@ -1,13 +1,6 @@
 # Assumes that metrics-server is installed in the cluster
 
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: slackspace
-
----
-
-apiVersion: v1
 kind: Pod
 metadata:
   name: high-cpu-pod
