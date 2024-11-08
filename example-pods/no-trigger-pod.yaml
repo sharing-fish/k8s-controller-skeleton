@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: no-trigger-pod
+  namespace: default
+  labels:
+    not: interesting
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest

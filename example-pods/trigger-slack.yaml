@@ -1,0 +1,24 @@
+# Assumes that metrics-server is installed in the cluster
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: slackspace
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: high-cpu-pod
+  namespace: slackspace
+spec:
+  containers:
+  - name: high-cpu-container
+    image: busybox
+    command: ["sh", "-c", "while true; do :; done"]
+    resources:
+      requests:
+        cpu: "50m"
+      limits:
+        cpu: "200m"
